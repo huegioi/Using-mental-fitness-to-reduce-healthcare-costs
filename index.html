@@ -137,6 +137,766 @@
             max-width: 800px;
             margin: 0 auto;
             height: 380px;
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(74, 32, 64, 0.08);
+        }
+
+        .skillful-card {
+            border-radius: 2.5rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        .circle-bg {
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #0f766e;
+            cursor: pointer;
+            margin-top: -8px;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #57534e; 
+            border-radius: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .progress-sidebar-container { display: none; }
+            .main-wrapper { padding-left: 1rem; }
+        }
+    </style>
+</head>
+<body class="text-stone-800 antialiased overflow-x-hidden">
+
+    <!-- Scroll Progress Indicator Sidebar -->
+    <div class="progress-sidebar-container hidden sm:block">
+        <div class="progress-fill" id="scrollProgress"></div>
+        <div class="section-marker active" style="top: 0%" data-target="hero">
+            <span class="marker-label">Home</span>
+        </div>
+        <div class="section-marker" style="top: 16%" data-target="crisis">
+            <span class="marker-label">Crisis</span>
+        </div>
+        <div class="section-marker" style="top: 33%" data-target="burden">
+            <span class="marker-label">Multiplier</span>
+        </div>
+        <div class="section-marker" style="top: 50%" data-target="tool">
+            <span class="marker-label">Mitigation Tool</span>
+        </div>
+        <div class="section-marker" style="top: 66%" data-target="efficacy">
+            <span class="marker-label">Clinical Data</span>
+        </div>
+        <div class="section-marker" style="top: 83%" data-target="evidence">
+            <span class="marker-label">Study Library</span>
+        </div>
+        <div class="section-marker" style="top: 100%" data-target="partner">
+            <span class="marker-label">Partner</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#fdfbf7]/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center pl-0 sm:pl-10 md:pl-16">
+                    <span class="font-bold text-plum text-2xl tracking-tighter">skillfulmeans</span>
+                </div>
+                <!-- INCREASED TEXT SIZE HERE: text-xs lg:text-sm -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center text-xs lg:text-sm font-bold uppercase tracking-widest text-stone-500">
+                    <a href="#tool" class="hover:text-plum transition">Claims Tool</a>
+                    <button onclick="openModal('fullReportModal')" class="hover:text-plum transition border-b-2 border-transparent hover:border-plum">Full Report</button>
+                    <button onclick="openModal('summaryModal')" class="hover:text-plum transition">Exec Summary</button>
+                </div>
+                <!-- INCREASED BUTTON TEXT SIZE HERE -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-teal-800 transition shadow-lg shadow-teal-700/20 hidden sm:block">
+                        Book a Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Executive Summary Modal -->
+    <div id="summaryModal" class="modal" onclick="closeModal('summaryModal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeModal('summaryModal')" class="absolute top-10 right-10 text-stone-400 hover:text-plum text-2xl">✕</button>
+            <div class="max-w-3xl mx-auto space-y-12">
+                <header class="border-b border-stone-200 pb-10">
+                    <h2 class="text-[10px] font-black text-plum uppercase tracking-[0.4em] mb-4">Executive Briefing</h2>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">Mental Fitness for Healthcare Reduction</h1>
+                </header>
+
+                <div class="prose prose-stone max-w-none space-y-8 text-stone-700 leading-relaxed text-lg">
+                    <p>The current healthcare landscape for corporate employers is defined by a shared, unsustainable financial drain: the high cost of reactive care. While hospitals face billions in penalties for avoidable patient readmissions mandated by federal programs, corporations face parallel "penalties" in the form of relentless, compounding increases in health insurance premiums. [3, 4]</p>
+                    <p>The root cause of both issues is often the same: unaddressed, sub-clinical mental distress. An employee struggling with chronic stress, anxiety, or burnout is, in effect, a <strong>"pre-patient."</strong> [6] If left unmanaged, this distress predictably escalates into tangible, high-cost medical events—emergency department visits, inpatient admissions, and chronic disease complications. For the modern benefit broker, the solution lies in an "upstream" clinical-to-corporate translation: implementing Mental Fitness Interventions that treat the root cause before it hits the claims data.</p>
+                    
+                    <h3 class="text-2xl font-bold text-plum pt-4">The Clinical Precedent: Proving ROI</h3>
+                    <p>To build a corporate strategy, one must first look at the hard clinical data. In hospital settings, mental fitness interventions like Mindfulness-Based Stress Reduction (MBSR) and Cognitive Behavioral Therapy (CBT) are not "perks"—they are evidence-based tools used to reduce acute care utilization.</p>
+                    <p>The results are staggering. A landmark study from Massachusetts General Hospital found that participants saw a <strong>43% reduction</strong> in total healthcare utilization within one year. [7] Similarly, Kaiser Permanente demonstrated that an 8-week MBSR program for patients with chronic illness led to a 50% reduction in ED visits and an <strong>80% reduction</strong> in hospital admissions. [26]</p>
+                    <p>Heart disease patients who received mental health treatment were <strong>75% less likely</strong> to be rehospitalized compared to those who did not. [23] This proves that the most effective way to prevent a high-cost physical health event is to treat the underlying mental health comorbidity.</p>
+                    
+                    <h3 class="text-2xl font-bold text-plum pt-4">The Business Case</h3>
+                    <p>Depression and anxiety cost the global economy an estimated $1 trillion per year in lost productivity. [27] A gold-standard meta-analysis found that for every $1.00 spent on wellness programs, medical costs fall by approximately <strong>$3.27</strong>, and absenteeism costs fall by another $2.73. [30]</p>
+                    <p>A 2023 analysis of four large companies found that engaged employees cost their employers <strong>$2,304 less</strong> in medical spending and $312 less in prescription costs per year because care shifted "upstream." [36]</p>
+                    
+                    <div class="bg-stone-100 p-8 rounded-3xl space-y-4">
+                        <p class="font-bold text-stone-900 uppercase text-xs tracking-widest">Broker Playbook Action:</p>
+                        <p class="text-sm">Stop selling "perks" to HR and start presenting a "Claims Mitigation Strategy" to the CFO by activating "Wellness Dollars"—carrier-provided funds earmarked for health promotion.</p>
+                    </div>
+                </div>
+                
+                <footer class="pt-8 border-t border-stone-200">
+                    <button onclick="closeModal('summaryModal')" class="bg-plum text-white px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:opacity-90">Close Summary</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Strategic Report Modal -->
+    <div id="fullReportModal" class="modal" onclick="closeModal('fullReportModal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeModal('fullReportModal')" class="absolute top-10 right-10 text-stone-400 hover:text-plum text-2xl">✕</button>
+            <div class="max-w-3xl mx-auto space-y-12">
+                <header class="border-b border-stone-200 pb-10">
+                    <h2 class="text-[10px] font-black text-plum uppercase tracking-[0.4em] mb-4">Full Strategic Report</h2>
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-stone-900 leading-[1.1]">The Clinical-to-Corporate Translation</h1>
+                    <p class="text-stone-500 mt-4 text-lg font-medium italic">A Broker’s Guide to Reducing Healthcare Utilization and Costs Through Mental Fitness Interventions</p>
+                </header>
+
+                <div class="prose prose-stone max-w-none space-y-10 text-stone-700 leading-relaxed text-lg">
+                    <section>
+                        <h3 class="text-2xl font-bold text-plum">Section I: Executive Briefing: The Proactive Imperative</h3>
+                        <p>The healthcare landscape for both clinical providers and corporate employers is defined by a shared, unsustainable financial drain: the high cost of reactive care. [1] Hospitals face billions in penalties for avoidable patient readmissions, mandated by programs like the Hospital Readmissions Reduction Program (HRRP). [3] Corporations face parallel penalties in the form of relentless, compounding increases in health insurance premiums, driven directly by high-cost claims from their employee populations. [4] These two problems, while appearing distinct, share an identical root cause and a single, proven solution.</p>
+                        <p>This report's central thesis is that a significant driver of high-cost physical healthcare utilization is unaddressed, sub-clinical mental distress. An employee struggling with chronic stress, anxiety, or burnout is, in effect, a "pre-patient". [6] Poor psychological resilience in response to stress is a primary driver of healthcare utilization. [7] If left unaddressed, this distress predictably escalates into tangible, high-cost medical events: emergency department visits, inpatient admissions, and chronic disease complications.</p>
+                        <p>The solution is an upstream intervention. Mental Fitness Programs (MFPs)—encompassing evidence-based methodologies like Mindfulness-Based Cognitive Therapy (MBCT), Mindfulness-Based Stress Reduction (MBSR), and resilience training—are not "soft perks." They are clinical-grade interventions applied "upstream" to the "pre-patient" population.</p>
+                        <p>This report provides the definitive, evidence-based case for this clinical-to-corporate translation. It establishes, first, the hard clinical data proving these interventions demonstrably reduce acute care utilization in hospital settings. Second, it translates this precedent into a quantifiable, ROI-driven business case for the corporate sector.</p>
+                        <p>Finally, it provides a strategic playbook for the modern health insurance benefits broker, shifting their role from a simple plan procurer to a critical cost-containment strategist. [4] This report will demonstrate how brokers can guide their clients to implement these high-ROI programs, funded strategically (and often at a zero net cost) by tapping into "wellness dollars" provided by the insurance carriers themselves.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-2xl font-bold text-plum pt-4">Section II: The Clinical Precedent: Proving the Efficacy of Mental Fitness in Hospital Settings</h3>
+                        <p>In clinical settings, mental fitness interventions are not experimental; they are evidence-based tools used to improve patient outcomes and solve core financial and operational challenges like readmissions and extended lengths of stay.</p>
+                        <p><strong>1. Reducing Emergency Department (ED) Visits:</strong> A major 2023 systematic review found that psychosocial interventions were significantly associated with a reduced number of emergency care visits, showing an Odds Ratio of 0.64. [16]</p>
+                        <p><strong>2. Shortening Hospital Length of Stay (LOS):</strong> A 2023 clinical trial showed that patients receiving short-term perioperative mindfulness meditation had significantly shortened hospital stays. [20]</p>
+                        <p><strong>3. Preventing Costly Readmissions:</strong> A landmark study highlighted by the American Heart Association (AHA) examined heart disease patients who also suffered from anxiety or depression. Individuals who received mental health treatment were 75% less likely to be rehospitalized and 74% less likely to have an ED visit. [23]</p>
+                    </section>
+                    
+                    <section>
+                        <h3 class="text-2xl font-bold text-plum pt-4">Section IV: Translating Clinical Success to Corporate Strategy: The Business Case</h3>
+                        <p><strong>Direct Medical and Pharmaceutical Cost Reduction:</strong> A foundational meta-analysis by Baicker, Cutler, and Song (2010), provides the gold-standard metric: for every $1.00 spent on wellness programs, medical costs fall by approximately $3.27. [30]</p>
+                        <p><strong>Combating "The Productivity Killers":</strong> Beyond direct medical savings, the same Baicker (2010) meta-analysis quantified the productivity return: for every $1.00 spent on wellness programs, absenteeism costs fall by approximately $2.73. [30]</p>
+                    </section>
+
+                    <footer class="pt-8 border-t border-stone-200">
+                        <button onclick="closeModal('fullReportModal')" class="bg-plum text-white px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:opacity-90">Return to Dashboard</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper sm:pl-16 md:pl-24 lg:pl-32 xl:pl-40">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-24 pb-16 px-4 overflow-hidden scroll-mt-20">
+            <div class="circle-bg w-64 h-64 bg-brand-pink top-[-50px] left-[-100px] opacity-40"></div>
+            <div class="circle-bg w-96 h-96 bg-brand-teal/10 bottom-[-100px] right-[-100px] opacity-30"></div>
+
+            <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+                <div class="inline-block bg-plum/10 text-plum px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">
+                    Strategic Cost Containment
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-stone-900 tracking-tight leading-tight">
+                    Mental Fitness for Healthcare <span class="text-plum">Cost Reduction</span>
+                </h1>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                    Addressing the "Pre-Patient" crisis through clinical-grade Emotional Resilience interventions to intercept high-cost medical events.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <button onclick="openModal('summaryModal')" class="bg-plum text-white px-10 py-4 rounded-full font-black text-xs uppercase tracking-widest shadow-2xl shadow-plum/20 hover:scale-105 transition w-full sm:w-auto">Read the Executive Summary</button>
+                    <a href="#tool" class="bg-white border border-stone-200 px-10 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:bg-stone-50 transition w-full sm:w-auto">ROI Savings Tool</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: The Crisis (Infographic) -->
+        <section id="crisis" class="max-w-5xl mx-auto px-4 py-16 scroll-mt-24 space-y-12 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8 text-left">
+                    <h2 class="text-4xl font-extrabold text-stone-900 leading-tight uppercase tracking-tighter">The Cost of Inaction</h2>
+                    <p class="text-stone-600 leading-relaxed text-lg">
+                        Unaddressed distress predictably escalates into high-cost medical events. Employees with poor Emotional Resilience have <strong>12 unplanned absences</strong> annually. [Study 29]
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-plum text-white p-8 rounded-[3rem] text-center shadow-lg shadow-plum/10">
+                            <div class="text-4xl font-black mb-1">$1T</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest opacity-70">Lost Productivity</div>
+                        </div>
+                        <div class="bg-brand-teal text-white p-8 rounded-[3rem] text-center shadow-lg shadow-teal-700/10">
+                            <div class="text-4xl font-black mb-1">57%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest opacity-70">Awareness Gap</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pre-Patient Infographic Timeline -->
+                <div class="skillful-card bg-brand-pink/10 border-brand-pink/30 relative overflow-hidden flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-plum mb-2">The "Pre-Patient" Escalation</h3>
+                    <p class="text-sm text-stone-600 mb-8 leading-relaxed">Without upstream intervention, unmanaged stress predictably escalates into a high-cost physical claim.</p>
+                    
+                    <div class="relative border-l-2 border-brand-pink ml-4 space-y-6 pb-6">
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-pink border-2 border-white"></div>
+                            <h4 class="text-sm font-bold text-stone-900">1. Sub-Clinical Distress</h4>
+                            <p class="text-xs text-stone-500 mt-1">Employee experiences chronic stress, anxiety, or burnout.</p>
+                        </div>
+                        
+                        <!-- Intercept Point -->
+                        <div class="relative pl-6 -my-2 z-10">
+                            <div class="bg-brand-teal text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block shadow-md">
+                                SkillfulMeans Intervention Point
+                            </div>
+                        </div>
+                        
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-300 border-2 border-white"></div>
+                            <h4 class="text-sm font-bold text-stone-600">2. Somatic Symptoms</h4>
+                            <p class="text-xs text-stone-500 mt-1">Manifestation of physical symptoms (e.g., insomnia, GI issues).</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-plum border-2 border-white"></div>
+                            <h4 class="text-sm font-bold text-plum">3. High-Cost Medical Claim</h4>
+                            <p class="text-xs text-stone-500 mt-1">Results in expensive ER visits, hospital admissions, or prolonged claims.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-white p-5 rounded-2xl border border-stone-100 flex items-center justify-between shadow-sm">
+                        <div>
+                            <span class="block text-xl font-black text-brand-teal">$3.27</span>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest mt-1 block">Medical Savings<br>per $1 Spent</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-xl font-black text-plum">-70%</span>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest mt-1 block">Claim Duration<br>(If caught early)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Workers' Comp Ledger -->
+        <section id="burden" class="max-w-5xl mx-auto px-4 py-16 scroll-mt-24 space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Liability Severity Multiplier</h2>
+                <p class="text-stone-500 text-sm mt-4 italic">Psychosocial factors dictate recovery speed. Claims with behavioral health comorbidities cost 2x to 4x more. [Study 60]</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="relative w-full h-80 md:h-96 lg:h-[400px] bg-white rounded-[2.5rem] p-4 md:p-8 shadow-sm border border-stone-200">
+                    <canvas id="workersCompChart" style="width: 100%; height: 100%;"></canvas>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-200 p-8 rounded-[2.5rem] shadow-sm">
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Duration Impact</span>
+                        <h4 class="text-3xl font-black text-plum mt-1">3x Standard Length</h4>
+                        <p class="text-xs text-stone-500 font-medium mt-2">Unmanaged Mental Fitness triples the time a claimant stays out of the workforce.</p>
+                    </div>
+                    <div class="bg-white border border-stone-200 p-8 rounded-[2.5rem] shadow-sm">
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">90-Day Intervention</span>
+                        <h4 class="text-3xl font-black text-brand-teal mt-1">60-70% Recovery</h4>
+                        <p class="text-xs text-stone-500 font-medium mt-2">Addressing Resilience within 90 days drastically reduces total settlement costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: THE TOOL DASHBOARD -->
+        <section id="tool" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24">
+            <div class="mb-12">
+                <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Claims Mitigation Strategy Tool</h2>
+                <p class="text-stone-500 mt-2 font-medium italic">Translate clinical ROI metrics into a localized financial model for your clients.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-stone-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-stone-900 mb-4 italic">What is it?</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-6">
+                        This tool translates the <strong>Baicker Harvard Study ($3.27 ROI)</strong> into a financial projection engine to justify Mental Fitness investment, splitting returns into two distinct buckets.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-stone-50 p-4 rounded-xl flex justify-between items-center border border-stone-100">
+                            <span class="text-[10px] font-black text-stone-400 uppercase tracking-wider">Medical ROI</span>
+                            <span class="text-brand-teal font-black text-lg">$3.27</span>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded-xl flex justify-between items-center border border-stone-100">
+                            <span class="text-[10px] font-black text-stone-400 uppercase tracking-wider">Absence ROI</span>
+                            <span class="text-brand-pink font-black text-lg">$2.73</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-stone-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-stone-900 mb-6 italic">How to use it?</h3>
+                    <div class="space-y-5 text-sm text-stone-600">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-plum text-white rounded-full w-6 h-6 flex items-center justify-center text-[10px] font-bold shrink-0">1</div>
+                            <p><strong>Audit:</strong> Contact the carrier to identify unused "use-it-or-lose-it" wellness dollars for the client.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-plum text-white rounded-full w-6 h-6 flex items-center justify-center text-[10px] font-bold shrink-0">2</div>
+                            <p><strong>Input:</strong> Adjust the <em>Total Wellness Fund</em> slider below (typically between $5k and $100k).</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-plum text-white rounded-full w-6 h-6 flex items-center justify-center text-[10px] font-bold shrink-0">3</div>
+                            <p><strong>Present:</strong> Use the 3-year stacked curve to show the CFO a legitimate Claims Mitigation Strategy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-plum text-white p-8 rounded-[2.5rem] shadow-sm relative overflow-hidden">
+                    <div class="circle-bg w-32 h-32 bg-white/5 -top-10 -right-10"></div>
+                    <h3 class="text-xl font-bold mb-4 italic">The "Shift" Result</h3>
+                    <p class="text-sm text-stone-300 leading-relaxed mb-8">
+                        Successful Workforce Mental Health programs result in <strong>Care Channel Shifting</strong>, moving users away from high-cost ER visits.
+                    </p>
+                    <div class="p-5 bg-white/10 rounded-2xl border border-white/5">
+                        <span class="block text-3xl font-black">$2,616</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-stone-400 mt-1 block">Avg Saving Per Employee/Yr</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-plum rounded-[4rem] p-8 md:p-16 text-white shadow-2xl relative overflow-hidden">
+                <div class="circle-bg w-64 h-64 bg-white/5 -top-20 -right-20"></div>
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+                    
+                    <div class="lg:col-span-5 space-y-10">
+                        <div class="bg-white/10 p-6 rounded-3xl border border-white/10">
+                            <div class="flex justify-between items-end mb-4">
+                                <span class="text-sm sm:text-base font-black uppercase tracking-widest text-stone-200">Total Carrier Wellness Fund</span>
+                                <span class="text-brand-teal font-black text-2xl sm:text-3xl bg-white px-3 py-1 rounded-xl shadow-inner border-2 border-stone-200">
+                                    $<span id="fundDisplay">50,000</span>
+                                </span>
+                            </div>
+                            <input type="range" id="wellnessFundTotal" min="5000" max="100000" step="5000" value="50000" class="w-full mt-4">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-stone-400 mt-3">
+                                <span>$5k</span>
+                                <span>$100k</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="border-l-4 border-brand-teal pl-4">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-1">Medical Savings</span>
+                                <span class="text-2xl font-black text-white">$<span id="medicalDisplay">163,500</span></span>
+                            </div>
+                            <div class="border-l-4 border-brand-pink pl-4">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-1">Absence Savings</span>
+                                <span class="text-2xl font-black text-white">$<span id="absentDisplay">136,500</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6 border-t border-white/10">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-2">Total Expected Financial Impact (Year 3)</span>
+                            <span class="text-4xl font-black text-brand-teal">$<span id="totalDisplay">300,000</span></span>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 relative w-full h-80 md:h-96 lg:h-[400px]">
+                        <canvas id="roiChart" style="width: 100%; height: 100%;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinical Efficacy Section -->
+        <section id="efficacy" class="max-w-5xl mx-auto px-4 py-16 scroll-mt-24 space-y-12">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Proving the ROI: Clinical Data</h2>
+                <p class="text-stone-600 mt-2 text-lg italic text-stone-500">Clinical foundations for reducing healthcare utilization in high-acuity environments.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="skillful-card border-t-8 border-t-plum space-y-6 shadow-sm">
+                    <h3 class="text-2xl font-bold text-stone-900 italic underline decoration-brand-pink underline-offset-8">AHA: 75% Reduction</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Heart disease patients receiving Mental Fitness treatment were 75% less likely to be rehospitalized than those who did not. [Study 23]</p>
+                    <div class="bg-plum/5 p-8 rounded-[2rem] grid grid-cols-2 gap-4 border border-plum/10">
+                        <div><span class="text-3xl font-black text-plum">43%</span><span class="text-[10px] font-black uppercase text-stone-500 block tracking-tighter mt-1">Utilization Drop (MGH)</span></div>
+                        <div><span class="text-3xl font-black text-plum">80%</span><span class="text-[10px] font-black uppercase text-stone-500 block tracking-tighter mt-1">Admission Drop (Kaiser)</span></div>
+                    </div>
+                </div>
+
+                <div class="skillful-card border-t-8 border-t-brand-teal space-y-6 shadow-sm">
+                    <h3 class="text-2xl font-bold text-stone-900 italic underline decoration-brand-pink underline-offset-8">Channel Shift Success</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Engagement shifts staff from high-cost reactive care to low-cost proactive support, resulting in $2,304 lower medical spend per person. [Study 36]</p>
+                    <div class="bg-brand-teal/5 p-8 rounded-[2rem] flex justify-between items-center border border-brand-teal/10">
+                        <div>
+                            <span class="text-3xl font-black text-brand-teal">28%</span>
+                            <span class="text-[10px] font-black uppercase text-stone-500 block tracking-tighter mt-1">Stress Lowered (Aetna)</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-3xl font-black text-brand-teal">13%</span>
+                            <span class="text-[10px] font-black uppercase text-stone-500 block tracking-tighter mt-1">Efficiency Boost (BT)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Examples Section -->
+        <section id="evidence" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24 space-y-12">
+            <div class="border-b border-stone-200 pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+                <div>
+                    <h2 class="text-4xl font-extrabold text-plum tracking-tight uppercase">Strategic Study Library</h2>
+                    <p class="text-stone-500 mt-2 font-medium italic">Foundational research for Clinical-to-Corporate translation.</p>
+                </div>
+                <span class="text-stone-400 text-[10px] font-black uppercase tracking-[0.3em]">skillfulmeans.life</span>
+            </div>
+
+            <!-- INCREASED TEXT SIZES ACROSS ALL STUDY CARDS -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Study 1 -->
+                <div class="p-8 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group">
+                    <div class="space-y-4">
+                        <span class="text-xs font-black text-plum uppercase tracking-widest bg-plum/5 px-3 py-1.5 rounded-full inline-block">Financial ROI</span>
+                        <h5 class="font-bold text-stone-900 text-xl md:text-2xl">Harvard Medical ROI Study</h5>
+                        <p class="text-sm text-stone-500 italic">Baicker, K., et al. (2010).</p>
+                        <p class="text-base text-stone-600 leading-relaxed pt-2">Medical costs fall by <strong>$3.27</strong> for every dollar spent on evidence-based interventions.</p>
+                    </div>
+                    <a href="https://doi.org/10.1377/hlthaff.2009.0626" target="_blank" class="mt-8 text-xs font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 30 →</a>
+                </div>
+
+                <!-- Study 2 -->
+                <div class="p-8 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group">
+                    <div class="space-y-4">
+                        <span class="text-xs font-black text-plum uppercase tracking-widest bg-plum/5 px-3 py-1.5 rounded-full inline-block">Clinical Scaling</span>
+                        <h5 class="font-bold text-stone-900 text-xl md:text-2xl">The Lancet 4:1 ROI</h5>
+                        <p class="text-sm text-stone-500 italic">Chisholm, D., et al. (2016).</p>
+                        <p class="text-base text-stone-600 leading-relaxed pt-2">Evaluation across 36 countries, finding consistent <strong>4:1 returns</strong> on Mental Fitness scaling.</p>
+                    </div>
+                    <a href="https://doi.org/10.1016/S2215-0366(16)30024-4" target="_blank" class="mt-8 text-xs font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 2 →</a>
+                </div>
+
+                <!-- Study 3 -->
+                <div class="p-8 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group">
+                    <div class="space-y-4">
+                        <span class="text-xs font-black text-plum uppercase tracking-widest bg-plum/5 px-3 py-1.5 rounded-full inline-block">Claims Liability</span>
+                        <h5 class="font-bold text-stone-900 text-xl md:text-2xl">Stress Cost Review</h5>
+                        <p class="text-sm text-stone-500 italic">Hassard, J., et al. (2018).</p>
+                        <p class="text-base text-stone-600 leading-relaxed pt-2">Proved stress claims result in <strong>3x longer</strong> worker absences than standard physical sprains.</p>
+                    </div>
+                    <a href="https://doi.org/10.1037/ocp0000069" target="_blank" class="mt-8 text-xs font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 29 →</a>
+                </div>
+
+                <!-- Study 4 -->
+                <div class="p-8 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group">
+                    <div class="space-y-4">
+                        <span class="text-xs font-black text-plum uppercase tracking-widest bg-plum/5 px-3 py-1.5 rounded-full inline-block">Workforce Impact</span>
+                        <h5 class="font-bold text-stone-900 text-xl md:text-2xl">Baum Corporate Analysis</h5>
+                        <p class="text-sm text-stone-500 italic">Baum & Song (2023).</p>
+                        <p class="text-base text-stone-600 leading-relaxed pt-2">Study finding <strong>$2,304 lower</strong> medical spending per year through care channel shifting.</p>
+                    </div>
+                    <a id="citations" href="https://www.skillfulmeans.life" target="_blank" class="mt-8 text-xs font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 36 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Partner with Us / Brochure Download -->
+        <section id="partner" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24 space-y-12 border-t border-stone-200">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Partner With SkillfulMeans</h2>
+                <p class="text-stone-500 text-sm mt-4 italic">Bring clinical-grade Mental Fitness to your corporate clients.</p>
+            </div>
+            
+            <div class="bg-white p-8 md:p-12 rounded-[3rem] border border-stone-200 shadow-xl relative overflow-hidden flex flex-col md:flex-row gap-12 items-center">
+                <!-- Brochure Image - Fixed Path for Local GitHub Rendering -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <img src="Front page SkillfulMeans Brochure front page.jpg" alt="SkillfulMeans Corporate Brochure" class="rounded-[2rem] shadow-2xl max-w-full h-auto border border-stone-100 hover:scale-105 transition-transform duration-300">
+                </div>
+                
+                <!-- Calls to Action -->
+                <div class="w-full md:w-1/2 space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-3xl font-bold text-plum">Download Our Corporate Brochure</h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            Explore our comprehensive suite of interactive wellness workshops, 14-day team challenges, and leadership EQ programs designed to build emotional resilience and reduce healthcare utilization.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col space-y-4">
+                        <a href="https://www.canva.com/design/DAHAYKBCwwg/tQAjggD0c4_HuTjVAGfxcQ/view?utm_content=DAHAYKBCwwg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdebd13816f" target="_blank" class="bg-plum text-white text-center px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-lg shadow-plum/20 hover:opacity-90 transition flex items-center justify-center space-x-2">
+                            <span>📥 View Corporate Brochure</span>
+                        </a>
+                        
+                        <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white text-center px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-lg shadow-teal-700/20 hover:bg-teal-800 transition flex items-center justify-center space-x-2">
+                            <span>🗓️ Book a Strategy Call</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-stone-100 py-16 px-4 border-t border-stone-200 mt-12">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-400 text-[10px] font-black uppercase tracking-[0.4em] space-y-6 md:space-y-0">
+                <div>© 2025 skillfulmeans. All rights reserved.</div>
+                <div class="flex space-x-8 md:space-x-12">
+                    <a href="https://www.skillfulmeans.life" target="_blank" class="hover:text-plum transition">SkillfulMeans.life</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End Main Wrapper -->
+
+    <script>
+        // Use a safe initialization pattern
+        function initApp() {
+            if (typeof Chart === 'undefined') {
+                setTimeout(initApp, 100);
+                return;
+            }
+
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.color = '#a8a29e';
+
+            // Workers Comp Chart
+            const wcCtx = document.getElementById('workersCompChart');
+            if (wcCtx) {
+                Chart.defaults.color = '#78716c'; 
+                new Chart(wcCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Physical Only', 'Stress-Only', 'Phys + Comorb.'],
+                        datasets: [{
+                            label: 'Avg Direct Cost ($)',
+                            data: [32000, 78000, 122000],
+                            backgroundColor: ['#d6d3d1', '#4a2040', '#0f766e'],
+                            borderRadius: 16
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false }, title: { display: true, text: 'Claim Severity Index', align: 'start', font: { size: 14, weight: '800' } } }
+                    }
+                });
+            }
+
+            // Broker ROI Calculator - Stacked Bar
+            const roiCtx = document.getElementById('roiChart');
+            if (roiCtx) {
+                Chart.defaults.color = '#d6d3d1'; 
+                const roiChart = new Chart(roiCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3'],
+                        datasets: [
+                            {
+                                label: 'Medical Savings ($3.27 ROI)',
+                                data: [0, 0, 0],
+                                backgroundColor: '#0f766e', // Teal
+                                borderRadius: 4,
+                                barPercentage: 0.6
+                            },
+                            {
+                                label: 'Absence/Productivity ($2.73 ROI)',
+                                data: [0, 0, 0],
+                                backgroundColor: '#fce7f3', // Pink
+                                borderRadius: 4,
+                                barPercentage: 0.6
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { 
+                            legend: { display: true, position: 'bottom', labels: { color: '#e5e7eb', font: { size: 11, weight: 'bold' }, usePointStyle: true, boxWidth: 10, padding: 20 } } 
+                        },
+                        scales: {
+                            x: { stacked: true, grid: { display: false }, ticks: { color: '#e5e7eb', font: { weight: 'bold' } } },
+                            y: { stacked: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#e5e7eb', callback: v => '$' + v/1000 + 'k' } }
+                        }
+                    }
+                });
+
+                const fundInput = document.getElementById('wellnessFundTotal');
+                const fundDisplay = document.getElementById('fundDisplay');
+                const medicalDisplay = document.getElementById('medicalDisplay');
+                const absentDisplay = document.getElementById('absentDisplay');
+                const totalDisplay = document.getElementById('totalDisplay');
+
+                function updateCalculator() {
+                    if(!fundInput) return;
+                    const pool = parseInt(fundInput.value);
+                    
+                    fundDisplay.innerText = pool.toLocaleString();
+
+                    // Split ROI Metrics
+                    const medSavings = pool * 3.27; 
+                    const absSavings = pool * 2.73;
+                    const totalSavings = medSavings + absSavings;
+
+                    // Update UI text
+                    medicalDisplay.innerText = Math.round(medSavings).toLocaleString();
+                    absentDisplay.innerText = Math.round(absSavings).toLocaleString();
+                    totalDisplay.innerText = Math.round(totalSavings).toLocaleString();
+
+                    // Projection curve
+                    roiChart.data.datasets[0].data = [medSavings * 0.3, medSavings * 0.7, medSavings];
+                    roiChart.data.datasets[1].data = [absSavings * 0.3, absSavings * 0.7, absSavings];
+                    
+                    roiChart.update();
+                }
+
+                if(fundInput) {
+                    fundInput.addEventListener('input', updateCalculator);
+                    updateCalculator(); 
+                }
+            }
+
+            // Scroll Progress Logic
+            const progressFill = document.getElementById('scrollProgress');
+            const markers = document.querySelectorAll('.section-marker');
+            const sections = document.querySelectorAll('section');
+
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollPos / docHeight) * 100;
+                
+                if(progressFill) {
+                    progressFill.style.height = scrollPercent + '%';
+                }
+
+                let current = '';
+                sections.forEach(sec => {
+                    if (scrollPos >= sec.offsetTop - 400) current = sec.getAttribute('id');
+                });
+                
+                markers.forEach(m => {
+                    m.classList.remove('active');
+                    if (m.getAttribute('data-target') === current) m.classList.add('active');
+                });
+            });
+
+            markers.forEach(m => m.addEventListener('click', () => {
+                const target = document.getElementById(m.getAttribute('data-target'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }));
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+    </script>
+</body>
+</html>            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .section-marker.active {
+            border-color: #0f766e;
+            background: #0f766e;
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.2);
+        }
+
+        .marker-label {
+            position: absolute;
+            left: 24px;
+            top: -1px;
+            white-space: nowrap;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9ca3af;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: rgba(253, 251, 247, 0.9);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .section-marker:hover .marker-label, 
+        .section-marker.active .marker-label {
+            opacity: 1;
+            color: #4a2040;
+            transform: translateX(5px);
+        }
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+            background-color: rgba(74, 32, 64, 0.5);
+            backdrop-blur: 8px;
+        }
+
+        .modal-content {
+            background-color: #fdfbf7;
+            margin: 2vh auto;
+            width: 95%;
+            max-width: 900px;
+            height: 90vh;
+            border-radius: 2rem;
+            overflow-y: auto;
+            padding: 3rem;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .modal-content { padding: 4rem; }
+        }
+
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: transparent; }
+        .modal-content::-webkit-scrollbar-thumb { background: #4a2040; border-radius: 10px; }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 380px;
             max-height: 450px;
             background: white;
             border-radius: 2.5rem;
