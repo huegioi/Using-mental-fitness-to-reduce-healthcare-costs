@@ -677,6 +677,23 @@
     </div> <!-- End Main Wrapper -->
 
     <script>
+        // Modal functions to control popups
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
         // Use a safe initialization pattern
         function initApp() {
             if (typeof Chart === 'undefined') {
