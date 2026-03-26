@@ -114,7 +114,7 @@
             background-color: #fdfbf7;
             margin: 2vh auto;
             width: 95%;
-            max-width: 900px;
+            max-width: 1000px;
             height: 90vh;
             border-radius: 2rem;
             overflow-y: auto;
@@ -164,12 +164,12 @@
         }
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            height: 24px;
-            width: 24px;
+            height: 28px;
+            width: 28px;
             border-radius: 50%;
             background: #0f766e;
             cursor: pointer;
-            margin-top: -8px;
+            margin-top: -10px;
             border: 4px solid #fff;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
@@ -218,19 +218,17 @@
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-[#fdfbf7]/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center"> <!-- Increased height slightly for larger text -->
+            <div class="flex justify-between h-24 items-center"> 
                 <div class="flex items-center pl-0 sm:pl-10 md:pl-16">
-                    <a href="https://www.skillfulmeans.life" target="_blank" class="font-bold text-plum text-3xl tracking-tighter hover:opacity-80 transition">skillfulmeans</a> <!-- Increased logo size and added link -->
+                    <a href="https://www.skillfulmeans.life" target="_blank" class="font-bold text-plum text-3xl tracking-tighter hover:opacity-80 transition">skillfulmeans</a>
                 </div>
-                <!-- INCREASED TEXT SIZE HERE: text-base lg:text-lg -->
                 <div class="hidden md:flex space-x-6 lg:space-x-10 items-center text-sm lg:text-base font-bold uppercase tracking-widest text-stone-500">
                     <a href="#tool" class="hover:text-plum transition">Claims Tool</a>
                     <button onclick="openModal('fullReportModal')" class="hover:text-plum transition border-b-2 border-transparent hover:border-plum">Full Report</button>
                     <button onclick="openModal('summaryModal')" class="hover:text-plum transition">Exec Summary</button>
                 </div>
-                <!-- INCREASED BUTTON TEXT SIZE HERE -->
                 <div class="flex items-center space-x-4">
-                    <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white px-8 py-3.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-widest hover:bg-teal-800 transition shadow-lg shadow-teal-700/20 hidden sm:block">
+                    <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-teal-800 transition shadow-lg shadow-teal-700/20 hidden sm:block">
                         Book a Call
                     </a>
                 </div>
@@ -268,49 +266,248 @@
                 </div>
                 
                 <footer class="pt-8 border-t border-stone-200">
-                    <button onclick="closeModal('summaryModal')" class="bg-plum text-white px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:opacity-90">Close Summary</button>
+                    <button onclick="closeModal('summaryModal')" class="bg-plum text-white px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:opacity-90 transition">Close Summary</button>
                 </footer>
             </div>
         </div>
     </div>
 
-    <!-- Full Strategic Report Modal -->
+    <!-- Full Strategic Report Modal - FULL UNABRIDGED VERSION -->
     <div id="fullReportModal" class="modal" onclick="closeModal('fullReportModal')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button onclick="closeModal('fullReportModal')" class="absolute top-10 right-10 text-stone-400 hover:text-plum text-2xl">✕</button>
             <div class="max-w-3xl mx-auto space-y-12">
                 <header class="border-b border-stone-200 pb-10">
-                    <h2 class="text-[10px] font-black text-plum uppercase tracking-[0.4em] mb-4">Full Strategic Report</h2>
+                    <h2 class="text-[10px] font-black text-plum uppercase tracking-[0.4em] mb-4">Strategic Cost Containment Report</h2>
                     <h1 class="text-3xl md:text-5xl font-extrabold text-stone-900 leading-[1.1]">The Clinical-to-Corporate Translation</h1>
-                    <p class="text-stone-500 mt-4 text-lg font-medium italic">A Broker’s Guide to Reducing Healthcare Utilization and Costs Through Mental Fitness Interventions</p>
+                    <p class="text-stone-500 mt-4 text-lg font-medium italic text-center">A Broker’s Guide to Reducing Healthcare Utilization and Costs Through Mental Fitness Interventions</p>
                 </header>
 
-                <div class="prose prose-stone max-w-none space-y-10 text-stone-700 leading-relaxed text-lg">
+                <div class="prose prose-stone max-w-none text-stone-700 leading-relaxed text-lg space-y-10">
+                    <!-- SECTION I -->
                     <section class="space-y-5">
-                        <h3 class="text-2xl font-bold text-plum">Section I: Executive Briefing: The Proactive Imperative</h3>
-                        <p>The healthcare landscape for both clinical providers and corporate employers is defined by a shared, unsustainable financial drain: the high cost of reactive care. [1] Hospitals face billions in penalties for avoidable patient readmissions, mandated by programs like the Hospital Readmissions Reduction Program (HRRP). [3] Corporations face parallel penalties in the form of relentless, compounding increases in health insurance premiums, driven directly by high-cost claims from their employee populations. [4] These two problems, while appearing distinct, share an identical root cause and a single, proven solution.</p>
-                        <p>This report's central thesis is that a significant driver of high-cost physical healthcare utilization is unaddressed, sub-clinical mental distress. An employee struggling with chronic stress, anxiety, or burnout is, in effect, a "pre-patient". [6] Poor psychological resilience in response to stress is a primary driver of healthcare utilization. [7] If left unaddressed, this distress predictably escalates into tangible, high-cost medical events: emergency department visits, inpatient admissions, and chronic disease complications.</p>
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section I: Executive Briefing: The Proactive Imperative</h3>
+                        <p>The healthcare landscape for both clinical providers and corporate employers is defined by a shared, unsustainable financial drain: the high cost of reactive care. Hospitals face billions in penalties for avoidable patient readmissions, mandated by programs like the Hospital Readmissions Reduction Program (HRRP). Corporations face parallel penalties in the form of relentless, compounding increases in health insurance premiums, driven directly by high-cost claims from their employee populations. These two problems, while appearing distinct, share an identical root cause and a single, proven solution.</p>
+                        <p>This report's central thesis is that a significant driver of high-cost physical healthcare utilization is unaddressed, sub-clinical mental distress. An employee struggling with chronic stress, anxiety, or burnout is, in effect, a "pre-patient". Poor psychological resilience in response to stress is a primary driver of healthcare utilization. If left unaddressed, this distress predictably escalates into tangible, high-cost medical events: emergency department visits, inpatient admissions, and chronic disease complications.</p>
                         <p>The solution is an upstream intervention. Mental Fitness Programs (MFPs)—encompassing evidence-based methodologies like Mindfulness-Based Cognitive Therapy (MBCT), Mindfulness-Based Stress Reduction (MBSR), and resilience training—are not "soft perks." They are clinical-grade interventions applied "upstream" to the "pre-patient" population.</p>
                         <p>This report provides the definitive, evidence-based case for this clinical-to-corporate translation. It establishes, first, the hard clinical data proving these interventions demonstrably reduce acute care utilization in hospital settings. Second, it translates this precedent into a quantifiable, ROI-driven business case for the corporate sector.</p>
-                        <p>Finally, it provides a strategic playbook for the modern health insurance benefits broker, shifting their role from a simple plan procurer to a critical cost-containment strategist. [4] This report will demonstrate how brokers can guide their clients to implement these high-ROI programs, funded strategically (and often at a zero net cost) by tapping into "wellness dollars" provided by the insurance carriers themselves.</p>
+                        <p>Finally, it provides a strategic playbook for the modern health insurance benefits broker, shifting their role from a simple plan procurer to a critical cost-containment strategist. This report will demonstrate how brokers can guide their clients to implement these high-ROI programs, funded strategically (and often at a zero net cost) by tapping into "wellness dollars" provided by the insurance carriers themselves.</p>
                     </section>
 
+                    <!-- SECTION II -->
                     <section class="space-y-5">
-                        <h3 class="text-2xl font-bold text-plum pt-4">Section II: The Clinical Precedent: Proving the Efficacy of Mental Fitness in Hospital Settings</h3>
-                        <p>In clinical settings, mental fitness interventions are not experimental; they are evidence-based tools used to improve patient outcomes and solve core financial and operational challenges like readmissions and extended lengths of stay.</p>
-                        <p><strong>1. Reducing Emergency Department (ED) Visits:</strong> A major 2023 systematic review found that psychosocial interventions were significantly associated with a reduced number of emergency care visits, showing an Odds Ratio of 0.64. [16]</p>
-                        <p><strong>2. Shortening Hospital Length of Stay (LOS):</strong> A 2023 clinical trial showed that patients receiving short-term perioperative mindfulness meditation had significantly shortened hospital stays. [20]</p>
-                        <p><strong>3. Preventing Costly Readmissions:</strong> A landmark study highlighted by the American Heart Association (AHA) examined heart disease patients who also suffered from anxiety or depression. Individuals who received mental health treatment were 75% less likely to be rehospitalized and 74% less likely to have an ED visit. [23]</p>
-                    </section>
-                    
-                    <section class="space-y-5">
-                        <h3 class="text-2xl font-bold text-plum pt-4">Section IV: Translating Clinical Success to Corporate Strategy: The Business Case</h3>
-                        <p><strong>Direct Medical and Pharmaceutical Cost Reduction:</strong> A foundational meta-analysis by Baicker, Cutler, and Song (2010), provides the gold-standard metric: for every $1.00 spent on wellness programs, medical costs fall by approximately $3.27. [30]</p>
-                        <p><strong>Combating "The Productivity Killers":</strong> Beyond direct medical savings, the same Baicker (2010) meta-analysis quantified the productivity return: for every $1.00 spent on wellness programs, absenteeism costs fall by approximately $2.73. [30]</p>
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section II: The Clinical Precedent: Proving the Efficacy of Mental Fitness in Hospital Settings</h3>
+                        <p>To build the corporate strategy, one must first understand the scientific foundation. In clinical settings, mental fitness interventions are not experimental; they are evidence-based tools used to improve patient outcomes and solve core financial and operational challenges like readmissions and extended lengths of stay.</p>
+                        <h4 class="text-xl font-bold text-stone-800">Defining the Clinical Interventions</h4>
+                        <p>The term "mental fitness" encompasses a suite of standardized, evidence-based therapeutic approaches.</p>
+                        <ul class="list-disc pl-5 space-y-3">
+                            <li><strong>Mindfulness-Based Cognitive Therapy (MBCT):</strong> This is a structured, 8-week group program that synthesizes the core components of mindfulness practice with the proven techniques of Cognitive Behavioral Therapy (CBT). It is considered a "third-wave" form of CBT. Its primary goal is to teach individuals to develop a new, non-judgmental awareness of their thoughts and feelings. By doing so, they learn to recognize and disengage from the negative, ruminative thought patterns that trigger downward mood spirals, making it exceptionally effective in preventing depression relapse.</li>
+                            <li><strong>Mindfulness-Based Stress Reduction (MBSR):</strong> Developed by Jon Kabat-Zinn, MBSR is a standardized 8-week intervention that uses mindfulness meditation, guided imagery, breathing methods, and gentle body scans to help patients relax the body and mind. Its goal is to cultivate a present-moment, non-judgmental awareness that reduces stress and anxiety. Research has shown MBSR to be highly effective in reducing anxiety and depression severity, consistently outperforming non-evidence-based treatments and active controls like relaxation training or supportive psychotherapy.</li>
+                            <li><strong>Cognitive Behavioral Therapy (CBT) and Resilience:</strong> CBT is a foundational psychotherapy that operates on the principle of reframing negative thought patterns to create healthier behaviors and perceptions. These techniques are central to building resilience, which is defined as the psychological and physical capacity to cope with and recover from stress.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold text-stone-800 pt-2">Quantifying the Impact on Acute Care Utilization</h4>
+                        <p>These interventions directly and measurably reduce the use of the most expensive forms of healthcare.</p>
+                        <p><strong>1. Reducing Emergency Department (ED) Visits:</strong> The emergency department is often the default point of entry for individuals whose mental or physical health conditions have escalated to a crisis point. A major 2023 systematic review and meta-analysis found that psychosocial interventions were significantly associated with a reduced number of emergency care visits, showing an Odds Ratio of 0.64. In the ED itself, CBT-based interventions have proven feasibility and effective.</p>
+                        <p><strong>2. Shortening Hospital Length of Stay (LOS):</strong> Every additional day a patient spends in a hospital bed increases cost and risk. A 2023 clinical trial focused on patients undergoing surgery for gastrointestinal tumors found that patients receiving short-term perioperative mindfulness meditation had significantly shortened hospital stays ($P=0.002$). They were in less pain and their bodies were under less stress, enabling a faster recovery.</p>
+                        <p><strong>3. Preventing Costly Readmissions:</strong> Evidence now overwhelmingly shows that a patient's mental state is a primary predictor of their physical readmission. A landmark study highlighted by the American Heart Association (AHA) examined heart disease patients who also suffered from anxiety or depression. Individuals who received mental health treatment were <strong>75% less likely to be rehospitalized</strong> and 74% less likely to have an ED visit.</p>
                     </section>
 
-                    <footer class="pt-8 border-t border-stone-200">
-                        <button onclick="closeModal('fullReportModal')" class="bg-plum text-white px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:opacity-90">Return to Dashboard</button>
+                    <!-- SECTION III -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section III: Clinical Success Stories: A Deep Dive into High-Impact Programs</h3>
+                        <p><strong>Clinical Success Story 1: The Relaxation Response Resiliency Program (3RP):</strong> From Massachusetts General Hospital (MGH), this study followed 4,452 patients. One year after participating, total healthcare utilization <strong>decreased by 43%</strong>. Emergency Department (ED) visits were cut nearly in half.</p>
+                        <p><strong>Clinical Success Story 2: Kaiser Permanente's MBSR Program:</strong> Members with chronic conditions enrolled in an 8-week MBSR program saw visits to Primary Care decrease by 50%, Specialty Care by 38%, and **Hospital Admissions decrease by 80%**.</p>
+
+                        <div class="bg-stone-50 border border-stone-200 p-6 rounded-2xl overflow-x-auto mt-6">
+                            <p class="font-bold text-sm mb-4">Table 1: Clinical Efficacy of Mental Fitness Interventions on Healthcare Utilization</p>
+                            <table class="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr class="border-b border-stone-300">
+                                        <th class="pb-2 pr-4 font-bold text-plum">Program / Study</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Intervention</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Target Population</th>
+                                        <th class="pb-2 font-bold text-plum">Key Quantified Outcome</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="py-3 pr-4">Relaxation Response Resiliency Program (3RP)</td>
+                                        <td class="py-3 pr-4">Mind-Body Resilience</td>
+                                        <td class="py-3 pr-4">General Patients</td>
+                                        <td class="py-3">43% reduction in total healthcare utilization at 1 year.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Kaiser Permanente Study</td>
+                                        <td class="py-3 pr-4">8-Week MBSR</td>
+                                        <td class="py-3 pr-4">Chronic Pain / Illness</td>
+                                        <td class="py-3">50% reduction in ED visits; 80% reduction in hospital admissions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">AHA-Cited Heart Disease Study</td>
+                                        <td class="py-3 pr-4">Mental Health Treatment</td>
+                                        <td class="py-3 pr-4">Heart Disease w/ Anxiety</td>
+                                        <td class="py-3">75% reduction in hospital readmissions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Perioperative Mindfulness Study</td>
+                                        <td class="py-3 pr-4">Mindfulness Meditation</td>
+                                        <td class="py-3 pr-4">Surgery Patients</td>
+                                        <td class="py-3">Significantly shortened hospital stay ($P=0.002$).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- SECTION IV -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section IV: Translating Clinical Success to Corporate Strategy</h3>
+                        <p>Poor working environments result in an estimated 12 billion working days lost globally every year to depression and anxiety, at a staggering cost of **$1 trillion per year in lost productivity**. A 2022 Gallup analysis found that workers who rate their mental health as "fair" or "poor" have nearly 12 days of unplanned absences annually.</p>
+                        <p>The Tangible ROI: A foundational meta-analysis (Baicker, 2010) provides the gold-standard metric: for every **$1.00 spent on wellness programs, medical costs fall by approximately $3.27, and absenteeism costs fall by $2.73**.</p>
+                    </section>
+
+                    <!-- SECTION V -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section V: Corporate Success Stories</h3>
+                        <p><strong>WMHP Analysis:</strong> Analysis of four large companies found engaged employees cost their employers <strong>$2,304 less in medical spending</strong> per year. Engagement shifted care away from expensive emergency rooms to low-cost preventative coaching.</p>
+                        <p><strong>Project Blue PHI Series:</strong> Mid-sized manufacturing companies saved $500 per employee annually ($125,000 total) by bundling mental, physical, and financial coaching.</p>
+                        <p><strong>Sleep App Intervention:</strong> A 30-month study found employees using a sleep improvement app had 93% lower inpatient medical costs, producing annualized savings of **$1,677 per employee**.</p>
+
+                        <div class="bg-stone-50 border border-stone-200 p-6 rounded-2xl overflow-x-auto mt-6">
+                            <p class="font-bold text-sm mb-4">Table 2: The Corporate ROI: Translating Mental Fitness to Financial Outcomes</p>
+                            <table class="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr class="border-b border-stone-300">
+                                        <th class="pb-2 pr-4 font-bold text-plum">Study / Case</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Intervention</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Per-Employee Savings / ROI</th>
+                                        <th class="pb-2 font-bold text-plum">Impact on Productivity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="py-3 pr-4">WMHP Analysis</td>
+                                        <td class="py-3 pr-4">Mental Health Program</td>
+                                        <td class="py-3 pr-4">$2,600 total annual savings</td>
+                                        <td class="py-3">Reduced ED visits for mental health.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Baicker, Cutler, & Song</td>
+                                        <td class="py-3 pr-4">Wellness Programs</td>
+                                        <td class="py-3 pr-4">$3.27 medical / $1 spent</td>
+                                        <td class="py-3">$2.73 absenteeism / $1 spent.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Project Blue (Manufacturing)</td>
+                                        <td class="py-3 pr-4">Bundled Coaching</td>
+                                        <td class="py-3 pr-4">$500 annual saving</td>
+                                        <td class="py-3">Improved employee satisfaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Sleep App Study</td>
+                                        <td class="py-3 pr-4">Insomnia Prevention App</td>
+                                        <td class="py-3 pr-4">$1,677 annual saving</td>
+                                        <td class="py-3">79% fewer acute in-patient days.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- SECTION VI -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section VI: The Hidden Multiplier: Workers’ Compensation and Mental Fitness</h3>
+                        <p>Psychosocial factors—such as depression, anxiety, and fear-avoidance—often shape recovery more than the physical injury itself. Claims with behavioral health comorbidities cost 2 to 4 times more and can triple the duration of a claim if unaddressed.</p>
+                        <p><strong>Early Intervention:</strong> Behavioral health intervention within the first 90 days of a claim can reduce the duration by **60% to 70%**. Employers realize a $4 return for every $1 invested in targeted mental health actions specifically through decreased workers' compensation overhead.</p>
+
+                        <div class="bg-stone-50 border border-stone-200 p-6 rounded-2xl overflow-x-auto mt-6">
+                            <p class="font-bold text-sm mb-4">Table 3: Impact of Mental Fitness on Workers’ Compensation Metrics</p>
+                            <table class="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr class="border-b border-stone-300">
+                                        <th class="pb-2 pr-4 font-bold text-plum">Metric</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Impact of Comorbidity</th>
+                                        <th class="pb-2 font-bold text-plum">Impact of Early Intervention</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="py-3 pr-4">Claim Cost</td>
+                                        <td class="py-3 pr-4">2x – 4x Higher</td>
+                                        <td class="py-3">$4 return for every $1 invested</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Claim Duration</td>
+                                        <td class="py-3 pr-4">3x Longer</td>
+                                        <td class="py-3">60% – 70% Reduction</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Recovery Factors</td>
+                                        <td class="py-3 pr-4">Stress out-predicts injury</td>
+                                        <td class="py-3">Faster return-to-work</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- SECTION VII -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section VII: The Broker's Evolving Role</h3>
+                        <p>The legacy model of the broker as a transactional agent—focused primarily on shopping for the lowest premium at renewal—is no longer sufficient. The modern broker must be a consultative cost-containment partner, Integrated as a year-round strategic partner to help clients redesign benefits to reduce their risk profile.</p>
+                    </section>
+
+                    <!-- SECTION VIII -->
+                    <section class="space-y-5">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section VIII: The Broker's Playbook: Activating "Wellness Dollars"</h3>
+                        <p>The key funding mechanism is **carrier-provided wellness dollars**. These are funds specifically earmarked for Qualifying wellness and health-promotion initiatives. Most of these funds are **"use-it-or-lose-it"**—expiring at the end of the plan year.</p>
+                        <p>The Action Plan: Conduct a "Wellness Dollar Audit" to identify exactly how much is available. Use these dollars to fund digital mental health apps, resilience workshops, or holistic coaching—resulting in a high-ROI program at **zero new cost** to the client.</p>
+
+                        <div class="bg-stone-50 border border-stone-200 p-6 rounded-2xl overflow-x-auto mt-6">
+                            <p class="font-bold text-sm mb-4">Table 4: Broker’s Action Plan: Activating Wellness Dollars</p>
+                            <table class="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr class="border-b border-stone-300">
+                                        <th class="pb-2 pr-4 font-bold text-plum">Intervention Type</th>
+                                        <th class="pb-2 pr-4 font-bold text-plum">Why It Works</th>
+                                        <th class="pb-2 font-bold text-plum">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="py-3 pr-4">Digital Apps</td>
+                                        <td class="py-3 pr-4">Scalable sleep/stress support.</td>
+                                        <td class="py-3">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Holistic Coaching</td>
+                                        <td class="py-3 pr-4">Saved $500/employee.</td>
+                                        <td class="py-3">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">Resilience Workshops</td>
+                                        <td class="py-3 pr-4">43% utilization drop.</td>
+                                        <td class="py-3">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4">EAP Services</td>
+                                        <td class="py-3 pr-4">Shifts care to low-cost channels.</td>
+                                        <td class="py-3">Medium-High</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- SECTION IX -->
+                    <section class="space-y-5 pb-10">
+                        <h3 class="text-2xl font-bold text-plum border-b border-stone-100 pb-2">Section IX: Strategic Recommendations and Conclusion</h3>
+                        <p>Mental fitness interventions are a core clinical and financial strategy for population health management. By translating the proven success of clinical interventions into corporate environments, brokers can deliver measurable value that goes far beyond a simple rate negotiation.</p>
+                        <p><strong>The Path Forward:</strong> Stop selling "perks" to HR and start presenting a "Claims Mitigation Strategy" to the CFO. Audit your entire book of business for wellness dollars and bundle interventions to address the root causes of healthcare utilization. This shift transforms the broker into an indispensable partner who reduces costs, boosts productivity, and delivers an undeniable return on investment.</p>
+                    </section>
+
+                    <footer class="pt-8 border-t border-stone-200 text-center">
+                        <button onclick="closeModal('fullReportModal')" class="bg-plum text-white px-10 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:opacity-90 transition shadow-lg">Close Full Report</button>
                     </footer>
                 </div>
             </div>
@@ -365,7 +562,6 @@
                     </div>
                 </div>
                 
-                <!-- Pre-Patient Infographic Timeline -->
                 <div class="skillful-card bg-brand-pink/10 border-brand-pink/30 relative overflow-hidden flex flex-col justify-center">
                     <h3 class="text-2xl font-bold text-plum mb-2">The "Pre-Patient" Escalation</h3>
                     <p class="text-sm text-stone-600 mb-8 leading-relaxed">Without upstream intervention, unmanaged stress predictably escalates into a high-cost physical claim.</p>
@@ -376,14 +572,11 @@
                             <h4 class="text-sm font-bold text-stone-900">1. Sub-Clinical Distress</h4>
                             <p class="text-xs text-stone-500 mt-1">Employee experiences chronic stress, anxiety, or burnout.</p>
                         </div>
-                        
-                        <!-- Intercept Point -->
                         <div class="relative pl-6 -my-2 z-10">
                             <div class="bg-brand-teal text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block shadow-md">
                                 SkillfulMeans Intervention Point
                             </div>
                         </div>
-                        
                         <div class="relative pl-6">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-300 border-2 border-white"></div>
                             <h4 class="text-sm font-bold text-stone-600">2. Somatic Symptoms</h4>
@@ -414,7 +607,7 @@
         <section id="burden" class="max-w-5xl mx-auto px-4 py-16 scroll-mt-24 space-y-12">
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Liability Severity Multiplier</h2>
-                <p class="text-stone-500 text-sm mt-4 italic">Psychosocial factors dictate recovery speed. Claims with behavioral health comorbidities cost 2x to 4x more. [Study 60]</p>
+                <p class="text-stone-500 text-sm mt-4 italic text-lg">Psychosocial factors dictate recovery speed. Claims with behavioral health comorbidities cost 2x to 4x more. [Study 60]</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -426,7 +619,7 @@
                     <div class="bg-white border border-stone-200 p-8 rounded-[2.5rem] shadow-sm">
                         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Duration Impact</span>
                         <h4 class="text-3xl font-black text-plum mt-1">3x Standard Length</h4>
-                        <p class="text-xs text-stone-500 font-medium mt-2">Unmanaged Mental Health triples the time a claimant stays out of the workforce.</p>
+                        <p class="text-xs text-stone-500 font-medium mt-2">Unmanaged Mental Fitness triples the time a claimant stays out of the workforce.</p>
                     </div>
                     <div class="bg-white border border-stone-200 p-8 rounded-[2.5rem] shadow-sm">
                         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">90-Day Intervention</span>
@@ -439,9 +632,9 @@
 
         <!-- Section: THE TOOL DASHBOARD -->
         <section id="tool" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24">
-            <div class="mb-12">
+            <div class="mb-12 text-center md:text-left">
                 <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Claims Mitigation Strategy Tool</h2>
-                <p class="text-stone-500 mt-2 font-medium italic">Translate clinical ROI metrics into a localized financial model for your clients.</p>
+                <p class="text-stone-500 mt-2 font-medium italic text-lg">Translate clinical ROI metrics into a localized financial model for your clients.</p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 mb-12">
@@ -500,7 +693,7 @@
                     <div class="lg:col-span-5 space-y-10">
                         <div class="bg-white/10 p-6 rounded-3xl border border-white/10">
                             <div class="flex justify-between items-end mb-4">
-                                <span class="text-sm sm:text-base font-black uppercase tracking-widest text-stone-200">Total Carrier Wellness Fund</span>
+                                <span class="text-sm sm:text-base font-black uppercase tracking-widest text-stone-200 font-bold">Total Carrier Wellness Fund</span>
                                 <span class="text-brand-teal font-black text-2xl sm:text-3xl bg-white px-3 py-1 rounded-xl shadow-inner border-2 border-stone-200">
                                     $<span id="fundDisplay">50,000</span>
                                 </span>
@@ -524,7 +717,7 @@
                         </div>
                         
                         <div class="pt-6 border-t border-white/10">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-2">Total Expected Financial Impact (Year 3)</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-2 font-bold">Total Expected Financial Impact (Year 3)</span>
                             <span class="text-4xl font-black text-brand-teal">$<span id="totalDisplay">300,000</span></span>
                         </div>
                     </div>
@@ -543,7 +736,7 @@
                 <p class="text-stone-600 mt-2 text-lg italic text-stone-500">Clinical foundations for reducing healthcare utilization in high-acuity environments.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 text-center md:text-left">
                 <div class="skillful-card border-t-8 border-t-plum space-y-6 shadow-sm">
                     <h3 class="text-2xl font-bold text-stone-900 italic underline decoration-brand-pink underline-offset-8">AHA: 75% Reduction</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">Heart disease patients receiving Mental Fitness treatment were 75% less likely to be rehospitalized than those who did not. [Study 23]</p>
@@ -570,27 +763,26 @@
             </div>
         </section>
 
-        <!-- Study Examples Section -->
+        <!-- Study Library Section -->
         <section id="evidence" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24 space-y-12">
             <div class="border-b border-stone-200 pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                 <div>
                     <h2 class="text-4xl font-extrabold text-plum tracking-tight uppercase">Strategic Study Library</h2>
-                    <p class="text-stone-500 mt-2 font-medium italic text-lg">Foundational research for Clinical-to-Corporate translation.</p>
+                    <p class="text-stone-500 mt-2 font-medium italic text-xl">Foundational research for Clinical-to-Corporate translation.</p>
                 </div>
                 <span class="text-stone-400 text-xs font-black uppercase tracking-[0.3em]">skillfulmeans.life</span>
             </div>
 
-            <!-- DRAMATICALLY INCREASED TEXT SIZES ACROSS ALL STUDY CARDS -->
-            <div class="grid md:grid-cols-2 gap-8"> <!-- Increased gap -->
+            <div class="grid md:grid-cols-2 gap-8">
                 <!-- Study 1 -->
-                <div class="p-10 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group"> <!-- Increased padding -->
+                <div class="p-10 bg-white border border-stone-200 rounded-[3rem] flex flex-col justify-between hover:border-plum transition-all hover:shadow-xl group">
                     <div class="space-y-5">
                         <span class="text-sm font-black text-plum uppercase tracking-widest bg-plum/5 px-4 py-2 rounded-full inline-block">Financial ROI</span>
                         <h5 class="font-bold text-stone-900 text-2xl md:text-3xl leading-tight">Harvard Medical ROI Study</h5>
-                        <p class="text-base text-stone-500 italic">Baicker, K., et al. (2010).</p>
+                        <p class="text-sm text-stone-500 italic">Baicker, K., et al. (2010).</p>
                         <p class="text-lg md:text-xl text-stone-600 leading-relaxed pt-2">Medical costs fall by <strong>$3.27</strong> for every dollar spent on evidence-based interventions.</p>
                     </div>
-                    <a href="https://doi.org/10.1377/hlthaff.2009.0626" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 30 →</a>
+                    <a href="https://doi.org/10.1377/hlthaff.2009.0626" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline italic">Ref: 30 →</a>
                 </div>
 
                 <!-- Study 2 -->
@@ -598,10 +790,10 @@
                     <div class="space-y-5">
                         <span class="text-sm font-black text-plum uppercase tracking-widest bg-plum/5 px-4 py-2 rounded-full inline-block">Clinical Scaling</span>
                         <h5 class="font-bold text-stone-900 text-2xl md:text-3xl leading-tight">The Lancet 4:1 ROI</h5>
-                        <p class="text-base text-stone-500 italic">Chisholm, D., et al. (2016).</p>
+                        <p class="text-sm text-stone-500 italic">Chisholm, D., et al. (2016).</p>
                         <p class="text-lg md:text-xl text-stone-600 leading-relaxed pt-2">Evaluation across 36 countries, finding consistent <strong>4:1 returns</strong> on Mental Fitness scaling.</p>
                     </div>
-                    <a href="https://doi.org/10.1016/S2215-0366(16)30024-4" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 2 →</a>
+                    <a href="https://doi.org/10.1016/S2215-0366(16)30024-4" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline italic">Ref: 2 →</a>
                 </div>
 
                 <!-- Study 3 -->
@@ -609,10 +801,10 @@
                     <div class="space-y-5">
                         <span class="text-sm font-black text-plum uppercase tracking-widest bg-plum/5 px-4 py-2 rounded-full inline-block">Claims Liability</span>
                         <h5 class="font-bold text-stone-900 text-2xl md:text-3xl leading-tight">Stress Cost Review</h5>
-                        <p class="text-base text-stone-500 italic">Hassard, J., et al. (2018).</p>
+                        <p class="text-sm text-stone-500 italic">Hassard, J., et al. (2018).</p>
                         <p class="text-lg md:text-xl text-stone-600 leading-relaxed pt-2">Proved stress claims result in <strong>3x longer</strong> worker absences than standard physical sprains.</p>
                     </div>
-                    <a href="https://doi.org/10.1037/ocp0000069" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 29 →</a>
+                    <a href="https://doi.org/10.1037/ocp0000069" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline italic">Ref: 29 →</a>
                 </div>
 
                 <!-- Study 4 -->
@@ -620,44 +812,41 @@
                     <div class="space-y-5">
                         <span class="text-sm font-black text-plum uppercase tracking-widest bg-plum/5 px-4 py-2 rounded-full inline-block">Workforce Impact</span>
                         <h5 class="font-bold text-stone-900 text-2xl md:text-3xl leading-tight">Baum Corporate Analysis</h5>
-                        <p class="text-base text-stone-500 italic">Baum & Song (2023).</p>
+                        <p class="text-sm text-stone-500 italic">Baum & Song (2023).</p>
                         <p class="text-lg md:text-xl text-stone-600 leading-relaxed pt-2">Study finding <strong>$2,304 lower</strong> medical spending per year through care channel shifting.</p>
                     </div>
-                    <a id="citations" href="https://www.skillfulmeans.life" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline">Ref: 36 →</a>
+                    <a id="citations" href="https://www.skillfulmeans.life" target="_blank" class="mt-10 text-sm font-black text-plum uppercase tracking-widest flex items-center group-hover:underline italic">Ref: 36 →</a>
                 </div>
             </div>
         </section>
 
-        <!-- New Section: Partner with Us / Brochure Download -->
+        <!-- Section: Partner with Us -->
         <section id="partner" class="max-w-5xl mx-auto px-4 py-24 scroll-mt-24 space-y-12 border-t border-stone-200">
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-stone-900 uppercase tracking-tighter">Partner With SkillfulMeans</h2>
-                <p class="text-stone-500 text-sm mt-4 italic">Bring clinical-grade Mental Fitness to your corporate clients.</p>
+                <p class="text-stone-500 text-sm mt-4 italic text-xl">Bring clinical-grade Mental Fitness to your corporate clients.</p>
             </div>
             
             <div class="bg-white p-8 md:p-12 rounded-[3rem] border border-stone-200 shadow-xl relative overflow-hidden flex flex-col md:flex-row gap-12 items-center">
-                
-                <!-- RESTORED ACTUAL IMAGE TAG: Note the new simplified filename brochure.jpg -->
                 <div class="w-full md:w-1/2 flex justify-center">
                     <img src="brochure.jpg" alt="SkillfulMeans Corporate Brochure" class="rounded-[2rem] shadow-2xl max-w-full h-auto border border-stone-100 hover:scale-105 transition-transform duration-300">
                 </div>
                 
-                <!-- Calls to Action -->
                 <div class="w-full md:w-1/2 space-y-8">
-                    <div class="space-y-4">
+                    <div class="space-y-4 text-center md:text-left">
                         <h3 class="text-3xl font-bold text-plum">Download Our Corporate Brochure</h3>
-                        <p class="text-stone-600 leading-relaxed">
+                        <p class="text-stone-600 leading-relaxed text-lg">
                             Explore our comprehensive suite of interactive wellness workshops, 14-day team challenges, and leadership EQ programs designed to build emotional resilience and reduce healthcare utilization.
                         </p>
                     </div>
                     
-                    <div class="flex flex-col space-y-4">
-                        <a href="https://www.canva.com/design/DAHAYKBCwwg/tQAjggD0c4_HuTjVAGfxcQ/view?utm_content=DAHAYKBCwwg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdebd13816f" target="_blank" class="bg-plum text-white text-center px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-lg shadow-plum/20 hover:opacity-90 transition flex items-center justify-center space-x-2">
-                            <span>📥 View Corporate Brochure</span>
+                    <div class="flex flex-col space-y-4 text-base font-bold">
+                        <a href="https://www.canva.com/design/DAHAYKBCwwg/tQAjggD0c4_HuTjVAGfxcQ/view?utm_content=DAHAYKBCwwg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdebd13816f" target="_blank" class="bg-plum text-white text-center px-8 py-4 rounded-full uppercase tracking-widest shadow-lg shadow-plum/20 hover:opacity-90 transition">
+                            📥 View Corporate Brochure
                         </a>
                         
-                        <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white text-center px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-lg shadow-teal-700/20 hover:bg-teal-800 transition flex items-center justify-center space-x-2">
-                            <span>🗓️ Book a Strategy Call</span>
+                        <a href="https://calendly.com/skillfulmeans/skms-corporate-wellness-offerings-2" target="_blank" class="bg-brand-teal text-white text-center px-8 py-4 rounded-full uppercase tracking-widest shadow-lg shadow-teal-700/20 hover:bg-teal-800 transition">
+                            🗓️ Book a Strategy Call
                         </a>
                     </div>
                 </div>
@@ -666,7 +855,7 @@
 
         <!-- Footer -->
         <footer class="bg-stone-100 py-16 px-4 border-t border-stone-200 mt-12">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-400 text-[10px] font-black uppercase tracking-[0.4em] space-y-6 md:space-y-0">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-400 text-[10px] font-black uppercase tracking-[0.4em] space-y-6 md:space-y-0 text-center">
                 <div>© 2025 skillfulmeans. All rights reserved.</div>
                 <div class="flex space-x-8 md:space-x-12">
                     <a href="https://www.skillfulmeans.life" target="_blank" class="hover:text-plum transition">SkillfulMeans.life</a>
@@ -674,10 +863,9 @@
             </div>
         </footer>
 
-    </div> <!-- End Main Wrapper -->
+    </div>
 
     <script>
-        // Modal functions to control popups
         function openModal(id) {
             const modal = document.getElementById(id);
             if(modal) {
@@ -694,7 +882,6 @@
             }
         }
 
-        // Use a safe initialization pattern
         function initApp() {
             if (typeof Chart === 'undefined') {
                 setTimeout(initApp, 100);
@@ -739,14 +926,14 @@
                             {
                                 label: 'Medical Savings ($3.27 ROI)',
                                 data: [0, 0, 0],
-                                backgroundColor: '#0f766e', // Teal
+                                backgroundColor: '#0f766e', 
                                 borderRadius: 4,
                                 barPercentage: 0.6
                             },
                             {
                                 label: 'Absence/Productivity ($2.73 ROI)',
                                 data: [0, 0, 0],
-                                backgroundColor: '#fce7f3', // Pink
+                                backgroundColor: '#fce7f3', 
                                 borderRadius: 4,
                                 barPercentage: 0.6
                             }
@@ -777,17 +964,14 @@
                     
                     fundDisplay.innerText = pool.toLocaleString();
 
-                    // Split ROI Metrics
                     const medSavings = pool * 3.27; 
                     const absSavings = pool * 2.73;
                     const totalSavings = medSavings + absSavings;
 
-                    // Update UI text
                     medicalDisplay.innerText = Math.round(medSavings).toLocaleString();
                     absentDisplay.innerText = Math.round(absSavings).toLocaleString();
                     totalDisplay.innerText = Math.round(totalSavings).toLocaleString();
 
-                    // Projection curve
                     roiChart.data.datasets[0].data = [medSavings * 0.3, medSavings * 0.7, medSavings];
                     roiChart.data.datasets[1].data = [absSavings * 0.3, absSavings * 0.7, absSavings];
                     
